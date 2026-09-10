@@ -155,3 +155,71 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(circle at 12% 8%, color-mix(in oklab, var(--tan) 30%, transparent), transparent 42%),
+      radial-gradient(circle at 88% 78%, color-mix(in oklab, var(--rose) 22%, transparent), transparent 45%);
+    background-attachment: fixed;
+  }
+}
+
+@utility font-hand {
+  font-family: var(--font-hand);
+}
+
+@utility paper {
+  background-color: var(--card);
+  box-shadow: 0 18px 40px -24px color-mix(in oklab, var(--ink) 45%, transparent);
+}
+
+@utility ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    color-mix(in oklab, var(--tan) 45%, transparent) 32px
+  );
+}
+
+@utility tape {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.9rem;
+    left: 50%;
+    width: 5.5rem;
+    height: 1.6rem;
+    transform: translateX(-50%) rotate(-3deg);
+    background: color-mix(in oklab, var(--tan) 55%, transparent);
+    opacity: 0.7;
+  }
+}
+
+@utility ticket {
+  background-color: var(--card);
+  box-shadow: 0 14px 30px -22px color-mix(in oklab, var(--ink) 50%, transparent);
+  mask-image:
+    radial-gradient(circle 9px at 0 50%, transparent 98%, #000 100%),
+    radial-gradient(circle 9px at 100% 50%, transparent 98%, #000 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+@utility fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
