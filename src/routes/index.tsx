@@ -99,7 +99,7 @@ function Index() {
                 banget ngadepin aku. I miss you.
               </p>
             </div>
-            <p className="font-hand mt-8 text-right text-2xl text-primary">— aku</p>
+            <p className="font-hand mt-8 text-right text-2xl text-primary">— tyo</p>
           </section>
 
           <div className="mt-12 flex justify-center">
@@ -133,7 +133,11 @@ function Index() {
                         <h3 className="font-hand text-3xl text-foreground">{c.title}</h3>
                         <p className="mt-2 text-sm leading-7 text-muted-foreground">{c.desc}</p>
                         <button
-                          onClick={() => !isClaimed && setClaimed((p) => [...p, i])}
+                          onClick={() => {
+                            if (isClaimed) return;
+                            setClaimed((p) => [...p, i]);
+                            window.open("https://discord.com", "_blank", "noopener,noreferrer");
+                          }}
                           disabled={isClaimed}
                           className="mt-4 rounded-xl bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5 disabled:translate-y-0 disabled:bg-secondary disabled:text-secondary-foreground"
                         >
@@ -143,7 +147,7 @@ function Index() {
                     </div>
                     {isClaimed && (
                       <p className="fade-up mt-2 px-6 text-xs text-primary">
-                        Kupon berhasil diaktifkan! Hubungi aku pas kita call nanti ya.
+                        Kupon berhasil diaktifkan! Hubungi aku di Discord pas kita call nanti ya.
                       </p>
                     )}
                   </div>
