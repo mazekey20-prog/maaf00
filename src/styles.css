@@ -223,3 +223,12 @@
     transform: none;
   }
 }
+
+/* Hide Netlify "Powered by" badge for a cleaner, more personal look */
+[data-netlify-badge] {
+  display: none !important;
+}
+
+.netlify-badge {
+  display: none !important;
+}
