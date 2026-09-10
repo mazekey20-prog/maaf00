@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import photo from "@/assets/keneisya.png.asset.json";
-import photo2 from "@/assets/keneisya-2.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,7 +50,7 @@ function Index() {
       <section className="flex flex-col items-center text-center">
         <div className="paper -rotate-3 rounded-sm p-3 pb-14 sm:p-4 sm:pb-16">
           <img
-            src={photo.url}
+            src="/assets/keneisya.png"
             alt="Foto Keneisya"
             className="h-72 w-60 object-cover sm:h-80 sm:w-72"
           />
@@ -105,7 +104,7 @@ function Index() {
           <div className="mt-12 flex justify-center">
             <div className="paper rotate-2 rounded-sm p-2.5 pb-10">
               <img
-                src={photo2.url}
+                src="/assets/keneisya-2.png"
                 alt="Foto Keneisya lainnya"
                 className="h-44 w-36 object-cover sm:h-52 sm:w-44"
               />
